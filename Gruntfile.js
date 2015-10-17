@@ -22,14 +22,13 @@ module.exports = function(grunt){
 		},
 
 		imagemin: {
-			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'images/build/'
-				}]
-			}
+			files: [{
+				expand: true,
+				cwd: 'images',
+				src: ['**/*.{png,jpg,gif}'],
+				dest: 'sample/images/build'
+			}],
+
 		}
 	});
 
