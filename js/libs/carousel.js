@@ -1,1 +1,1 @@
-From the carousel file 
+var about = "From the carousel file";

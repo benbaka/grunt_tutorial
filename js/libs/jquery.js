@@ -1,1 +1,1 @@
-From the jquery file
+var about = "From the jquery file";

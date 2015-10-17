@@ -1,1 +1,1 @@
-from the global file
+var about = "from the global file";
