@@ -1,3 +1,4 @@
+images/build/*
 node_modules/*
 js/build/*
 .idea/*
