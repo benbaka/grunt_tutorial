@@ -12,11 +12,19 @@ module.exports = function(grunt){
 				],
 				dest: 'js/build/production.js',
 			}
+		},
+
+		uglify: {
+			build: {
+				src: 'js/build/production.js',
+				dest: 'js/build/production.min.js'
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('default', ['concat']);
+	grunt.registerTask('default', ['concat', 'uglify']);
 
 };
