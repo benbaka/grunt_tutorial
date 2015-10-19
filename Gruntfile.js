@@ -21,6 +21,16 @@ module.exports = function(grunt){
 			}
 		},
 
+		coffee: {
+			build: {
+				expand: true,
+				cwd: 'coffee',
+				src: ['**/*.coffee'],
+				dest: 'js/coffee',
+				ext: ".js"
+			}
+		},
+
 		imagemin: {
 			files: [{
 				expand: true,
@@ -32,21 +42,20 @@ module.exports = function(grunt){
 		},
 
 		watch: {
-			scripts: {
-				files: ['js/*.js'],
-				tasks: ['concat', 'uglify'],
-				options: {
-					spawn: false,
-				},
+			coffee:{
+				files: "coffee/js/*.coffee",
+				tasks: ["coffee:build"]
 			}
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-coffee');
 
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['watch']);
 
 };
